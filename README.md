@@ -21,9 +21,9 @@ If you just want to dig in to the code, go here:
 
 
 # Important
-Syscall codes can and do change between operating systems. You must change the the codes in the [Syscalls class](https://github.com/plackyhacker/SysCalls/blob/main/SysCall/Syscalls.cs) to match those of your target.
+~~Syscall codes can and do change between operating systems. You must change the the codes in the [Syscalls class](https://github.com/plackyhacker/SysCalls/blob/main/SysCall/Syscalls.cs) to match those of your target.~~ Dynamically resolving syscalls fixes this.
 
-And remember, the code looks for an instance of notepad to inject into, it is trivial to change this, or even spawn a surregate process to inject in to.
+Remember, the code looks for an instance of notepad to inject into, it is trivial to change this, or even spawn a surregate process to inject in to.
 
 # Example
 Execution of the code is shown below:
