@@ -8,6 +8,16 @@ Some anti-malware products, such as Bit Defender inject user mode hooks in `ntdl
 
 If we use syscalls directly we can avoid the hooks, and effectively bypassing the anti-malware scan.
 
+# Codez
+If you just want to dig in to the code, go here:
+
+[Native.cs](https://github.com/plackyhacker/SysCalls/blob/main/SysCall/Native.cs) - Native imports/structs from Win32 APIS
+
+[Syscalls.cs](https://github.com/plackyhacker/SysCalls/blob/main/SysCall/Syscalls.cs) - The sycall implementation.
+
+[Program.cs](https://github.com/plackyhacker/SysCalls/blob/main/SysCall/Program.cs) - The main routine.
+
+
 # Important
 Syscall codes can and do change between operating systems. You must change the the codes in the [Syscalls class](https://github.com/plackyhacker/SysCalls/blob/main/SysCall/Syscalls.cs) to match those of your target.
 
