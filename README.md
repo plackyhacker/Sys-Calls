@@ -8,6 +8,8 @@ Some anti-malware products, such as Bit Defender inject user mode hooks in `ntdl
 
 If we use syscalls directly we can avoid the hooks, and effectively bypassing the anti-malware scan.
 
+I updated the code to include dynamic syscall resolution, based upon the article [Dynamically resolving syscalls in C#](https://fgsec.net/posts/Dynamically-resolving-syscalls-in-CSharp/) by **FGSec**.
+
 # Codez
 If you just want to dig in to the code, go here:
 
