@@ -1,4 +1,4 @@
-# SysCalls
+# System Calls
 An example of using Windows System Calls (syscalls) in C# to inject a meterpreter shell.
 
 # Introduction
